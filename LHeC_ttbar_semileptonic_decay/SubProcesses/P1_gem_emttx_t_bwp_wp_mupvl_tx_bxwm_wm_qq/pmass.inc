@@ -1,0 +1,9 @@
+      PMASS(1)=ZERO
+      PMASS(2)=ABS(MDL_ME)
+      PMASS(3)=ABS(MDL_ME)
+      PMASS(4)=ABS(MDL_MB)
+      PMASS(5)=ABS(MDL_MM)
+      PMASS(6)=ZERO
+      PMASS(7)=ABS(MDL_MB)
+      PMASS(8)=ZERO
+      PMASS(9)=ZERO
