@@ -275,7 +275,7 @@ def book_hists(prefix):
     bins_eta  = np.linspace(-6, 6, 121)
     bins_pt1  = np.linspace(0, 1000, 201)
     bins_pt2  = np.linspace(0, 2000, 201)
-    bins_mtop = np.linspace(0, 400, 201)
+    bins_mtop = np.linspace(0, 200, 161)
     bins_mw   = np.linspace(0, 200, 161)
 
     h = {}
@@ -330,10 +330,10 @@ PLOT_META = {
     "topH_pt":  dict(xlabel=r"$p_T(t_{\mathrm{had}}^{\mathrm{reco}})$ [GeV]", ylabel="Events", logy=True, xlim=(0, 1000)),
 
     # zoom on top mass peak (like the plot you want)
-    "topL_m":   dict(xlabel=r"$m(t_{\mathrm{lep}}^{\mathrm{reco}})$ [GeV]", ylabel="Events", logy=True, xlim=(130, 210)),
-    "topH_m":   dict(xlabel=r"$m(t_{\mathrm{had}}^{\mathrm{reco}})$ [GeV]", ylabel="Events", logy=True, xlim=(130, 210)),
+    "topL_m":   dict(xlabel=r"$m(t_{\mathrm{lep}}^{\mathrm{reco}})$ [GeV]", ylabel="Events", logy=False, xlim=(130, 210)),
+    "topH_m":   dict(xlabel=r"$m(t_{\mathrm{had}}^{\mathrm{reco}})$ [GeV]", ylabel="Events", logy=False, xlim=(130, 210)),
 
-    "Whad_m":   dict(xlabel=r"$m(W_{\mathrm{had}}^{\mathrm{reco}})$ [GeV]", ylabel="Events", logy=True, xlim=(40, 130)),
+    "Whad_m":   dict(xlabel=r"$m(W_{\mathrm{had}}^{\mathrm{reco}})$ [GeV]", ylabel="Events", logy=False, xlim=(40, 130)),
 }
 
 
@@ -376,6 +376,14 @@ def make_one_plot(outbase, var, h_all, h_f5, h_f4, title):
         if ymin_candidates:
             ax.set_ylim(bottom=min(ymin_candidates) * 0.5)
 
+
+# ---- ADD THIS HERE ----
+# Force y-axis to start at 1 for mass plots (linear scale)
+    if var in ("Whad_m", "topL_m", "topH_m") and not meta["logy"]:
+        ax.set_ylim(bottom=5)
+# -----------------------
+
+
     _apply_nice_axes(ax)
     ax.legend(loc="best", fontsize=13, frameon=False)
 
@@ -390,9 +398,9 @@ def make_all_plots(outdir, tag, h_all, h_f5, h_f4):
     os.makedirs(plotdir, exist_ok=True)
 
     if tag == "LHeC":
-        title = r"$e^- p \to e^- t\bar{t}$ (semi-leptonic, GEN-level)"
+        title = r"$e^- p \to e^- t \bar{t}$ (semi-leptonic, GEN-level)"
     else:
-        title = r"$\mu^+ p \to \mu^+ t\bar{t}$ (semi-leptonic, GEN-level)"
+        title = r"$\mu^+ p \to \mu^+ t \bar{t}$ (semi-leptonic, GEN-level)"
 
     for var in PLOT_META.keys():
         outbase = os.path.join(plotdir, f"{tag}_{var}")
