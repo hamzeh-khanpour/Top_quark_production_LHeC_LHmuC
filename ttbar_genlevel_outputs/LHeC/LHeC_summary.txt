@@ -1,0 +1,16 @@
+File: /home/hamzeh-khanpour/MG5_aMC_v3_6_6/LHeC_ttbar_semileptonic_decay/Events/run_01/LHeC_ttbar_semileptonic_decay.lhe
+Tag: LHeC
+Beams (pdg1,pdg2,E1,E2): (2212, 11, 7000.0, 50.0)
+MGGenerationInfo: nevents=1000000, xsec=0.090637780623 pb
+Init xsec sum: 0.09063778 pb
+Using total xsec: 0.090637780623 pb
+Events read: 1000000
+Events reconstructed (ttbar ok): 1000000
+Fiducial cut: |eta_lep|<5.0 AND all 4 decay jets |eta|<5.0
+Total weighted acceptance A_tot = 0.979347536697
+Sigma_fid (per-proc) = 0.088765881391 pb
+Sigma_fid_alt (total*Atot) = 0.0887658871848 pb
+
+Per-subprocess:
+  proc  1: XSECUP=0.04530165 pb | sumw_all=45334.2 | sumw_pass=44401.6 | A=0.979427 | sigma_fid_i=0.0443696430048 pb
+  proc  2: XSECUP=0.04533613 pb | sumw_all=45303.2 | sumw_pass=44364 | A=0.979268 | sigma_fid_i=0.0443962383862 pb

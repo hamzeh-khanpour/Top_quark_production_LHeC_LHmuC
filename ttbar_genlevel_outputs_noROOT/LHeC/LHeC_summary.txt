@@ -1,0 +1,21 @@
+File: /home/hamzeh-khanpour/MG5_aMC_v3_6_6/LHeC_ttbar_semileptonic_decay/Events/run_01/LHeC_ttbar_semileptonic_decay.lhe
+Tag: LHeC
+Beams (pdg1,pdg2,E1,E2,NPRUP): (2212, 11, 7000.0, 50.0, 2)
+MGGenerationInfo: nevt=1000000, xsec_total(pb)=0.090637780623
+Init sum xsec(pb)=0.09063778
+Using total xsec(pb)=0.090637780623
+
+Events read: 1000000
+Events reconstructed: 1000000
+
+Acceptance A(|eta|<5) = 0.979347536698
+Sigma_fid(|eta|<5) per-proc = 0.088765881391 pb
+Sigma_fid(|eta|<5) total*A  = 0.0887658871849 pb
+
+Acceptance A(|eta|<4) = 0.860960698866
+Sigma_fid(|eta|<4) per-proc = 0.0780355473626 pb
+Sigma_fid(|eta|<4) total*A  = 0.0780355669488 pb
+
+Per-subprocess XSECUP:
+  proc 1: 0.04530165 pb
+  proc 2: 0.04533613 pb
