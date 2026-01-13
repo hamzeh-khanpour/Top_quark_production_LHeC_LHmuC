@@ -1,0 +1,1 @@
+/home/hamzeh-khanpour/MG5_aMC_v3_6_6/vendor/CutTools/includects/mpmodule.mod
