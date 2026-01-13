@@ -1,0 +1,327 @@
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+c      written by the UFO converter
+ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+
+C     Parameters that should not be recomputed event by event.
+C     
+      IF(READLHA) THEN
+
+        G = 2 * DSQRT(AS*PI)  ! for the first init
+
+        MDL_LHV = 1.000000D+00
+
+        MDL_NCOL = 3.000000D+00
+
+        MDL_CA = 3.000000D+00
+
+        MDL_TF = 5.000000D-01
+
+        MDL_CF = (4.000000D+00/3.000000D+00)
+
+        MDL_LAMWS__EXP__2 = MDL_LAMWS**2
+
+        MDL_CKM11 = 1.000000D+00-MDL_LAMWS__EXP__2/2.000000D+00
+
+        MDL_CKM12 = MDL_LAMWS
+
+        MDL_COMPLEXI = DCMPLX(0.000000D+00,1.000000D+00)
+
+        MDL_LAMWS__EXP__3 = MDL_LAMWS**3
+
+        MDL_CKM13 = MDL_AWS*MDL_LAMWS__EXP__3*(-(MDL_ETAWS
+     $   *MDL_COMPLEXI)+MDL_RHOWS)
+
+        MDL_CKM21 = -MDL_LAMWS
+
+        MDL_CKM22 = 1.000000D+00-MDL_LAMWS__EXP__2/2.000000D+00
+
+        MDL_CKM23 = MDL_AWS*MDL_LAMWS__EXP__2
+
+        MDL_CKM31 = MDL_AWS*MDL_LAMWS__EXP__3*(1.000000D+00-MDL_ETAWS
+     $   *MDL_COMPLEXI-MDL_RHOWS)
+
+        MDL_CKM32 = -(MDL_AWS*MDL_LAMWS__EXP__2)
+
+        MDL_CKM33 = 1.000000D+00
+
+        MDL_MZ__EXP__2 = MDL_MZ**2
+
+        MDL_MZ__EXP__4 = MDL_MZ**4
+
+        MDL_SQRT__2 = SQRT(DCMPLX(2.000000D+00))
+
+        MDL_MH__EXP__2 = MDL_MH**2
+
+        MDL_CKM1X1 = 1.000000D+00-MDL_LAMWS__EXP__2/2.000000D+00
+
+        MDL_CKM1X2 = MDL_LAMWS
+
+        MDL_CKM1X3 = MDL_AWS*MDL_LAMWS__EXP__3*(-(MDL_ETAWS
+     $   *MDL_COMPLEXI)+MDL_RHOWS)
+
+        MDL_CKM2X1 = -MDL_LAMWS
+
+        MDL_CKM2X2 = 1.000000D+00-MDL_LAMWS__EXP__2/2.000000D+00
+
+        MDL_CKM2X3 = MDL_AWS*MDL_LAMWS__EXP__2
+
+        MDL_CKM3X1 = MDL_AWS*MDL_LAMWS__EXP__3*(1.000000D+00-MDL_ETAWS
+     $   *MDL_COMPLEXI-MDL_RHOWS)
+
+        MDL_CKM3X2 = -(MDL_AWS*MDL_LAMWS__EXP__2)
+
+        MDL_CKM3X3 = 1.000000D+00
+
+        MDL_CONJG__CKM1X3 = CONJG(DCMPLX(MDL_CKM1X3))
+
+        MDL_CONJG__CKM2X3 = CONJG(DCMPLX(MDL_CKM2X3))
+
+        MDL_CONJG__CKM3X3 = CONJG(DCMPLX(MDL_CKM3X3))
+
+        MDL_CONJG__CKM2X1 = CONJG(DCMPLX(MDL_CKM2X1))
+
+        MDL_CONJG__CKM3X1 = CONJG(DCMPLX(MDL_CKM3X1))
+
+        MDL_CONJG__CKM2X2 = CONJG(DCMPLX(MDL_CKM2X2))
+
+        MDL_CONJG__CKM3X2 = CONJG(DCMPLX(MDL_CKM3X2))
+
+        MDL_NCOL__EXP__2 = MDL_NCOL**2
+
+        MDL_MC__EXP__2 = MDL_MC**2
+
+        MDL_MB__EXP__2 = MDL_MB**2
+
+        MDL_MT__EXP__2 = MDL_MT**2
+
+        MDL_CONJG__CKM11 = CONJG(DCMPLX(MDL_CKM11))
+
+        MDL_CONJG__CKM12 = CONJG(DCMPLX(MDL_CKM12))
+
+        MDL_CONJG__CKM13 = CONJG(DCMPLX(MDL_CKM13))
+
+        MDL_CONJG__CKM21 = CONJG(DCMPLX(MDL_CKM21))
+
+        MDL_CONJG__CKM22 = CONJG(DCMPLX(MDL_CKM22))
+
+        MDL_CONJG__CKM23 = CONJG(DCMPLX(MDL_CKM23))
+
+        MDL_CONJG__CKM31 = CONJG(DCMPLX(MDL_CKM31))
+
+        MDL_CONJG__CKM32 = CONJG(DCMPLX(MDL_CKM32))
+
+        MDL_CONJG__CKM33 = CONJG(DCMPLX(MDL_CKM33))
+
+        MDL_AEW = 1.000000D+00/AEWM1
+
+        MDL_MW = SQRT(DCMPLX(MDL_MZ__EXP__2/2.000000D+00
+     $   +SQRT(DCMPLX(MDL_MZ__EXP__4/4.000000D+00-(MDL_AEW*PI
+     $   *MDL_MZ__EXP__2)/(MDL_GF*MDL_SQRT__2)))))
+
+        MDL_SQRT__AEW = SQRT(DCMPLX(MDL_AEW))
+
+        MDL_EE = 2.000000D+00*MDL_SQRT__AEW*SQRT(DCMPLX(PI))
+
+        MDL_MW__EXP__2 = MDL_MW**2
+
+        MDL_SW2 = 1.000000D+00-MDL_MW__EXP__2/MDL_MZ__EXP__2
+
+        MDL_CW = SQRT(DCMPLX(1.000000D+00-MDL_SW2))
+
+        MDL_SQRT__SW2 = SQRT(DCMPLX(MDL_SW2))
+
+        MDL_SW = MDL_SQRT__SW2
+
+        MDL_G1 = MDL_EE/MDL_CW
+
+        MDL_GW = MDL_EE/MDL_SW
+
+        MDL_V = (2.000000D+00*MDL_MW*MDL_SW)/MDL_EE
+
+        MDL_V__EXP__2 = MDL_V**2
+
+        MDL_LAM = MDL_MH__EXP__2/(2.000000D+00*MDL_V__EXP__2)
+
+        MDL_YB = (MDL_YMB*MDL_SQRT__2)/MDL_V
+
+        MDL_YC = (MDL_YMC*MDL_SQRT__2)/MDL_V
+
+        MDL_YE = (MDL_YME*MDL_SQRT__2)/MDL_V
+
+        MDL_YM = (MDL_YMM*MDL_SQRT__2)/MDL_V
+
+        MDL_YT = (MDL_YMT*MDL_SQRT__2)/MDL_V
+
+        MDL_YTAU = (MDL_YMTAU*MDL_SQRT__2)/MDL_V
+
+        MDL_MUH = SQRT(DCMPLX(MDL_LAM*MDL_V__EXP__2))
+
+        MDL_AXIALZUP = (3.000000D+00/2.000000D+00)*(-(MDL_EE*MDL_SW)
+     $   /(6.000000D+00*MDL_CW))-(1.000000D+00/2.000000D+00)*((MDL_CW
+     $   *MDL_EE)/(2.000000D+00*MDL_SW))
+
+        MDL_AXIALZDOWN = (-1.000000D+00/2.000000D+00)*(-(MDL_CW*MDL_EE)
+     $   /(2.000000D+00*MDL_SW))+(-3.000000D+00/2.000000D+00)*(
+     $   -(MDL_EE*MDL_SW)/(6.000000D+00*MDL_CW))
+
+        MDL_VECTORZUP = (1.000000D+00/2.000000D+00)*((MDL_CW*MDL_EE)
+     $   /(2.000000D+00*MDL_SW))+(5.000000D+00/2.000000D+00)*(-(MDL_EE
+     $   *MDL_SW)/(6.000000D+00*MDL_CW))
+
+        MDL_VECTORZDOWN = (1.000000D+00/2.000000D+00)*(-(MDL_CW*MDL_EE)
+     $   /(2.000000D+00*MDL_SW))+(-1.000000D+00/2.000000D+00)*(
+     $   -(MDL_EE*MDL_SW)/(6.000000D+00*MDL_CW))
+
+        MDL_VECTORAUP = (2.000000D+00*MDL_EE)/3.000000D+00
+
+        MDL_VECTORADOWN = -(MDL_EE)/3.000000D+00
+
+        MDL_VECTORWMDXU = (1.000000D+00/2.000000D+00)*((MDL_EE)
+     $   /(MDL_SW*MDL_SQRT__2))
+
+        MDL_AXIALWMDXU = (-1.000000D+00/2.000000D+00)*((MDL_EE)
+     $   /(MDL_SW*MDL_SQRT__2))
+
+        MDL_VECTORWPUXD = (1.000000D+00/2.000000D+00)*((MDL_EE)
+     $   /(MDL_SW*MDL_SQRT__2))
+
+        MDL_AXIALWPUXD = -(1.000000D+00/2.000000D+00)*((MDL_EE)
+     $   /(MDL_SW*MDL_SQRT__2))
+
+        MDL_I1X31 = MDL_YB*MDL_CONJG__CKM1X3
+
+        MDL_I1X32 = MDL_YB*MDL_CONJG__CKM2X3
+
+        MDL_I1X33 = MDL_YB*MDL_CONJG__CKM3X3
+
+        MDL_I2X12 = MDL_YC*MDL_CONJG__CKM2X1
+
+        MDL_I2X13 = MDL_YT*MDL_CONJG__CKM3X1
+
+        MDL_I2X22 = MDL_YC*MDL_CONJG__CKM2X2
+
+        MDL_I2X23 = MDL_YT*MDL_CONJG__CKM3X2
+
+        MDL_I2X32 = MDL_YC*MDL_CONJG__CKM2X3
+
+        MDL_I2X33 = MDL_YT*MDL_CONJG__CKM3X3
+
+        MDL_I3X21 = MDL_CKM2X1*MDL_YC
+
+        MDL_I3X22 = MDL_CKM2X2*MDL_YC
+
+        MDL_I3X23 = MDL_CKM2X3*MDL_YC
+
+        MDL_I3X31 = MDL_CKM3X1*MDL_YT
+
+        MDL_I3X32 = MDL_CKM3X2*MDL_YT
+
+        MDL_I3X33 = MDL_CKM3X3*MDL_YT
+
+        MDL_I4X13 = MDL_CKM1X3*MDL_YB
+
+        MDL_I4X23 = MDL_CKM2X3*MDL_YB
+
+        MDL_I4X33 = MDL_CKM3X3*MDL_YB
+
+        MDL_VECTOR_UBGP = MDL_I1X31
+
+        MDL_VECTOR_CDGP = -MDL_I2X12
+
+        MDL_VECTOR_CSGP = -MDL_I2X22
+
+        MDL_VECTOR_CBGP = MDL_I1X32-MDL_I2X32
+
+        MDL_VECTOR_TDGP = -MDL_I2X13
+
+        MDL_VECTOR_TSGP = -MDL_I2X23
+
+        MDL_VECTOR_TBGP = MDL_I1X33-MDL_I2X33
+
+        MDL_AXIAL_UBGP = -MDL_I1X31
+
+        MDL_AXIAL_CDGP = -MDL_I2X12
+
+        MDL_AXIAL_CSGP = -MDL_I2X22
+
+        MDL_AXIAL_CBGP = -MDL_I2X32-MDL_I1X32
+
+        MDL_AXIAL_TDGP = -MDL_I2X13
+
+        MDL_AXIAL_TSGP = -MDL_I2X23
+
+        MDL_AXIAL_TBGP = -MDL_I2X33-MDL_I1X33
+
+        MDL_VECTOR_UBGM = -MDL_I4X13
+
+        MDL_VECTOR_CDGM = MDL_I3X21
+
+        MDL_VECTOR_CSGM = MDL_I3X22
+
+        MDL_VECTOR_CBGM = MDL_I3X23-MDL_I4X23
+
+        MDL_VECTOR_TDGM = MDL_I3X31
+
+        MDL_VECTOR_TSGM = MDL_I3X32
+
+        MDL_VECTOR_TBGM = MDL_I3X33-MDL_I4X33
+
+        MDL_AXIAL_UBGM = -MDL_I4X13
+
+        MDL_AXIAL_CDGM = -MDL_I3X21
+
+        MDL_AXIAL_CSGM = -MDL_I3X22
+
+        MDL_AXIAL_CBGM = -MDL_I4X23-MDL_I3X23
+
+        MDL_AXIAL_TDGM = -MDL_I3X31
+
+        MDL_AXIAL_TSGM = -MDL_I3X32
+
+        MDL_AXIAL_TBGM = -MDL_I4X33-MDL_I3X33
+
+        MDL_GW__EXP__2 = MDL_GW**2
+
+        MDL_CW__EXP__2 = MDL_CW**2
+
+        MDL_EE__EXP__2 = MDL_EE**2
+
+        MDL_SW__EXP__2 = MDL_SW**2
+
+        MDL_YC__EXP__2 = MDL_YC**2
+
+        MDL_YB__EXP__2 = MDL_YB**2
+
+        MDL_YT__EXP__2 = MDL_YT**2
+
+      ENDIF
+C     
+C     Parameters that should be recomputed at an event by even basis.
+C     
+      AS = G**2/4/PI
+
+      MDL_SQRT__AS = SQRT(DCMPLX(AS))
+
+      MDL_G__EXP__4 = G**4
+
+      MDL_G__EXP__2 = G**2
+
+      MDL_G__EXP__3 = G**3
+
+      MDL_MU_R__EXP__2 = MU_R**2
+
+C     
+C     Parameters that should be updated for the loops.
+C     
+      IF (UPDATELOOP) THEN
+        MDL_R2MIXEDFACTOR_FIN_ = -(MDL_G__EXP__2*(1.000000D+00+MDL_LHV)
+     $   *(MDL_NCOL__EXP__2-1.000000D+00))/(2.000000D+00*MDL_NCOL
+     $   *1.600000D+01*PI**2)
+
+      ENDIF
+C     
+C     Definition of the EW coupling used in the write out of aqed
+C     
+      GAL(1) = 3.5449077018110318D0 / DSQRT(ABS(AEWM1))
+      GAL(2) = 1D0
+
